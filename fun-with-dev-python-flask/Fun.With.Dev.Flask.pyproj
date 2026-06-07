@@ -578,6 +578,7 @@
     <Compile Include="Fun_With_Dev_Flask\__init__.py" />
     <Compile Include="Fun_With_Dev_Flask\views.py" />
     <Compile Include="passenger_wsgi.py" />
+    <Compile Include="tests\test_views.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="env\" />
@@ -772,6 +773,7 @@
     <Folder Include="Fun_With_Dev_Flask\templates\" />
     <Folder Include="Properties\" />
     <Folder Include="Properties\PublishProfiles\" />
+    <Folder Include="tests\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="env\.gitignore" />
@@ -1465,6 +1467,7 @@
     <Content Include="env\Scripts\pythonw.exe" />
     <Content Include="Fun_With_Dev_Flask\templates\algorithms.html" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <Content Include="Fun_With_Dev_Flask\templates\bubble_sort.html" />
     <Content Include="Properties\PublishProfiles\FolderProfile.pubxml.user" />
     <None Include="Properties\PublishProfiles\FTPProfile.pubxml" />
     <Content Include="Properties\PublishProfiles\FTPProfile.pubxml.user" />
