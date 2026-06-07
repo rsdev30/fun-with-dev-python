@@ -21,6 +21,7 @@
     <InterpreterId>Global|PythonCore|3.13</InterpreterId>
     <IsWindowsApplication>False</IsWindowsApplication>
     <PublishUrl>./app.publish</PublishUrl>
+    <TestFramework>Pytest</TestFramework>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>

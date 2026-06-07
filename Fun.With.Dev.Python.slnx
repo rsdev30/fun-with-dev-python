@@ -1,3 +1,6 @@
 <Solution>
   <Project Path="fun-with-dev-python-flask/Fun.With.Dev.Flask.pyproj" Type="888888a0-9f3d-457c-b088-3a5042f75d52" Id="90161e37-b784-406f-a157-4fce4c9b564f" />
+  <Project Path="fun-with-dev-python-shared/Fun.With.Dev.Python.Shared.pyproj" Type="888888a0-9f3d-457c-b088-3a5042f75d52" Id="12345678-1234-1234-1234-123456789012">
+    <Build Project="false" />
+  </Project>
 </Solution>
