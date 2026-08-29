@@ -1,0 +1,3 @@
+Flask>=2.0
+-e fun-with-dev-python-shared
+-e fun-with-dev-python-flask

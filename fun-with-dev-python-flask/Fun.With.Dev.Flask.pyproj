@@ -9,8 +9,7 @@
     </ProjectHome>
     <ProjectTypeGuids>{789894c7-04a9-4a11-a6b5-3f4435165112};{1b580a1a-fdb3-4b32-83e1-6407eb2722e6};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
     <StartupFile>app.py</StartupFile>
-    <SearchPath>
-    </SearchPath>
+    <SearchPath>..\Fun.With.Dev.Python.Shared;..\fun-with-dev-python-shared\fun_with_dev_python_shared;..\fun-with-dev-python-shared\fun_with_dev_python_shared\sorting;..\..\fun-with-dev-python</SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <LaunchProvider>Web launcher</LaunchProvider>
     <WebBrowserUrl>http://localhost</WebBrowserUrl>
@@ -18,7 +17,7 @@
     <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
     <Name>Fun.With.Dev.Flask</Name>
     <RootNamespace>FlaskWebProject1</RootNamespace>
-    <InterpreterId>Global|PythonCore|3.13</InterpreterId>
+    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
     <IsWindowsApplication>False</IsWindowsApplication>
     <PublishUrl>./app.publish</PublishUrl>
     <TestFramework>Pytest</TestFramework>
@@ -578,6 +577,8 @@
     <Compile Include="Fun_With_Dev_Flask\__init__.py" />
     <Compile Include="Fun_With_Dev_Flask\views.py" />
     <Compile Include="passenger_wsgi.py" />
+    <Compile Include="tests\test_api.py" />
+    <Compile Include="tests\test_import_shared.py" />
     <Compile Include="tests\test_views.py" />
   </ItemGroup>
   <ItemGroup>
@@ -1466,11 +1467,14 @@
     <Content Include="env\Scripts\python.exe" />
     <Content Include="env\Scripts\pythonw.exe" />
     <Content Include="Fun_With_Dev_Flask\templates\algorithms.html" />
+    <Content Include="MANIFEST.in" />
+    <Content Include="setup.cfg" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <Content Include="Fun_With_Dev_Flask\templates\bubble_sort.html" />
     <Content Include="Properties\PublishProfiles\FolderProfile.pubxml.user" />
     <None Include="Properties\PublishProfiles\FTPProfile.pubxml" />
     <Content Include="Properties\PublishProfiles\FTPProfile.pubxml.user" />
+    <Content Include="pyproject.toml" />
     <Content Include="requirements.txt" />
     <Content Include="Fun_With_Dev_Flask\static\content\bootstrap.css" />
     <Content Include="Fun_With_Dev_Flask\static\content\bootstrap.min.css" />
@@ -1500,15 +1504,6 @@
     <Content Include="Fun_With_Dev_Flask\templates\layout.html" />
   </ItemGroup>
   <ItemGroup>
-    <Interpreter Include="env1\">
-      <Id>env1</Id>
-      <Version>3.14</Version>
-      <Description>env1 (Python 3.14.2)</Description>
-      <InterpreterPath>Scripts\python.exe</InterpreterPath>
-      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
-      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
-      <Architecture>X64</Architecture>
-    </Interpreter>
     <Interpreter Include="env\">
       <Id>env</Id>
       <Version>3.14</Version>

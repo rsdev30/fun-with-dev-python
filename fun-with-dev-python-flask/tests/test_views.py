@@ -18,10 +18,12 @@ def test_pages_render(client):
         assert 'text/html' in resp.content_type
 
 
+from fun_with_dev_python_shared.sorting import bubble_sort, merge_sort, quick_sort
+
 def test_sort_helpers():
-    assert views._bubble_sort([3, 1, 2]) == [1, 2, 3]
-    assert views._merge_sort([5, 3, 1, 4]) == sorted([5, 3, 1, 4])
-    assert views._quick_sort([3, 2, 2, 1]) == sorted([3, 2, 2, 1])
+    assert bubble_sort([3, 1, 2]) == [1, 2, 3]
+    assert merge_sort([5, 3, 1, 4]) == sorted([5, 3, 1, 4])
+    assert quick_sort([3, 2, 2, 1]) == sorted([3, 2, 2, 1])
 
 
 # --- /api/sort ---
