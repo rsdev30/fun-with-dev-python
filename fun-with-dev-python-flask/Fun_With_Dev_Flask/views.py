@@ -4,10 +4,19 @@ Routes and views for the flask application.
 Added REST API endpoints under /api for sorting, searching, and basic data structure operations.
 """
 
+import sys
+from pathlib import Path
 from datetime import datetime
 from flask import render_template, request, jsonify
 from Fun_With_Dev_Flask import app
 
+# Add the shared project to Python path to allow imports from fun_with_dev_python_shared
+shared_project_path = Path(__file__).parent.parent.parent / 'fun-with-dev-python-shared'
+sys.path.insert(0, str(shared_project_path))
+
+from fun_with_dev_python_shared.sorting.bubble_sort import bubble_sort
+from fun_with_dev_python_shared.sorting.merge_sort import merge_sort
+from fun_with_dev_python_shared.sorting.quick_sort import quick_sort
 @app.route('/')
 @app.route('/home')
 def home():
@@ -50,7 +59,7 @@ def algorithms():
 
 
 @app.route('/algorithms/bubble-sort')
-def bubble_sort():
+def bubble_sort_page():
     """Renders the bubble sort page."""
     return render_template(
         'bubble_sort.html',
@@ -59,44 +68,7 @@ def bubble_sort():
         message='Your bubble sort implementation page.'
     )
 
-# --- REST API endpoints for algorithms ---
-
-def _bubble_sort(arr):
-    a = arr.copy()
-    n = len(a)
-    for i in range(n):
-        for j in range(0, n - i - 1):
-            if a[j] > a[j + 1]:
-                a[j], a[j + 1] = a[j + 1], a[j]
-    return a
-
-
-def _merge_sort(arr):
-    if len(arr) <= 1:
-        return arr[:]
-    mid = len(arr) // 2
-    left = _merge_sort(arr[:mid])
-    right = _merge_sort(arr[mid:])
-    merged = []
-    i = j = 0
-    while i < len(left) and j < len(right):
-        if left[i] <= right[j]:
-            merged.append(left[i]); i += 1
-        else:
-            merged.append(right[j]); j += 1
-    merged.extend(left[i:])
-    merged.extend(right[j:])
-    return merged
-
-
-def _quick_sort(arr):
-    if len(arr) <= 1:
-        return arr[:]
-    pivot = arr[len(arr) // 2]
-    left = [x for x in arr if x < pivot]
-    middle = [x for x in arr if x == pivot]
-    right = [x for x in arr if x > pivot]
-    return _quick_sort(left) + middle + _quick_sort(right)
+# --- REST API endpoints for algorithms (delegated to shared.sorting) ---
 
 
 @app.route('/api/sort', methods=['POST'])
@@ -115,11 +87,11 @@ def api_sort():
     # ensure elements are comparable; attempt to sort using Python semantics
     try:
         if alg == 'bubble':
-            result = _bubble_sort(data)
+            result = bubble_sort(data)
         elif alg == 'merge':
-            result = _merge_sort(data)
+            result = merge_sort(data)
         elif alg == 'quick':
-            result = _quick_sort(data)
+            result = quick_sort(data)
         else:
             result = sorted(data)
     except Exception as e:

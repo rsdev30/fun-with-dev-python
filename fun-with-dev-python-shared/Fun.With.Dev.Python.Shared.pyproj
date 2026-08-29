@@ -23,9 +23,20 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="fun_with_dev_python_shared\__init__.py" />
+    <Compile Include="fun_with_dev_python_shared\sorting\bubble_sort.py" />
+    <Compile Include="fun_with_dev_python_shared\sorting\merge_sort.py" />
+    <Compile Include="fun_with_dev_python_shared\sorting\quick_sort.py" />
+    <Compile Include="fun_with_dev_python_shared\sorting\test_property_sorting.py" />
+    <Compile Include="fun_with_dev_python_shared\sorting\test_sorting.py" />
+    <Compile Include="fun_with_dev_python_shared\sorting\__init__.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="fun_with_dev_python_shared\" />
+    <Folder Include="fun_with_dev_python_shared\search\" />
+    <Folder Include="fun_with_dev_python_shared\sorting\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="pyproject.toml" />
+    <Content Include="setup.cfg" />
   </ItemGroup>
 </Project>
