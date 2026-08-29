@@ -1467,11 +1467,14 @@
     <Content Include="env\Scripts\python.exe" />
     <Content Include="env\Scripts\pythonw.exe" />
     <Content Include="Fun_With_Dev_Flask\templates\algorithms.html" />
+    <Content Include="MANIFEST.in" />
+    <Content Include="setup.cfg" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <Content Include="Fun_With_Dev_Flask\templates\bubble_sort.html" />
     <Content Include="Properties\PublishProfiles\FolderProfile.pubxml.user" />
     <None Include="Properties\PublishProfiles\FTPProfile.pubxml" />
     <Content Include="Properties\PublishProfiles\FTPProfile.pubxml.user" />
+    <Content Include="pyproject.toml" />
     <Content Include="requirements.txt" />
     <Content Include="Fun_With_Dev_Flask\static\content\bootstrap.css" />
     <Content Include="Fun_With_Dev_Flask\static\content\bootstrap.min.css" />

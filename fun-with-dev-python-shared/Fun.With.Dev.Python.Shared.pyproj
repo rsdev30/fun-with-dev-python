@@ -13,6 +13,7 @@
     <OutputPath>.</OutputPath>
     <Name>Fun.With.Dev.Python.Shared</Name>
     <RootNamespace>Fun.With.Dev.Python.Shared</RootNamespace>
+    <TestFramework>Pytest</TestFramework>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
